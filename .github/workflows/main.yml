@@ -1,0 +1,38 @@
+name: "Laboratorio 1"
+
+on:
+  push:
+  
+jobs:
+  print_Date_ubuntu:
+    name: Print Date Ubuntu!
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print date Ubuntu!
+        run: date
+        
+  print_Date_windows:
+    name: Print Date Windows!
+    runs-on: windows-latest
+    
+    steps:
+      - name: Print Date Windows!
+        run: date
+                  
+  print_Date_macos:
+    name: Print Date MacOS!
+    runs-on: macos-latest
+    
+    steps:
+      - name: Print Date termino
+        runs-on: ubuntu-latest
+        
+    needs:
+      - print_Date_Ubuntu
+      - print_Date_Windows
+      - print_Date_MacOS
+    
+    steps:
+    - name: Print Date termino
+      run: date
